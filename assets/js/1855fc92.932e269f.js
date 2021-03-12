@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{76:function(a){a.exports=JSON.parse('{"allTagsPath":"/mind-ar-js-doc/blog/tags","slug":"hola","name":"hola","count":1,"permalink":"/mind-ar-js-doc/blog/tags/hola"}')}}]);
