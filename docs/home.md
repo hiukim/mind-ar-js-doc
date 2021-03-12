@@ -5,4 +5,4 @@ sidebar_label: Home
 slug: /
 ---
 
-Welcome to MindAR
+Nothing to say at the moment. Please go to [Quick Start](./quick-start/overview.md) =)
