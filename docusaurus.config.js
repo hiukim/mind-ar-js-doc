@@ -3,12 +3,12 @@ module.exports = {
   title: 'mind-ar-js',
   tagline: 'web augmented reality - augmented images',
   url: 'https://hiukim.github.io',
-  baseUrl: '/test-gh/',
+  baseUrl: '/mind-ar-js-doc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'hiukim', // Usually your GitHub org/user name.
-  projectName: 'test-gh', // Usually your repo name.
+  projectName: 'mind-ar-js-doc', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'MindAR - Documentation',
