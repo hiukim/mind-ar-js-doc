@@ -30,18 +30,27 @@ We will go through the available events one by one in the following sub-sections
 
 	const startButton = document.querySelector("#example-start-button");
 	const stopButton = document.querySelector("#example-stop-button");
-	const stopARButton = document.querySelector("#example-stop-ar-button");
+	const pauseButton = document.querySelector("#example-pause-button");
+	const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
+	const unpauseButton = document.querySelector("#example-unpause-button");
 
 	startButton.addEventListener('click', () => {
 	  console.log("start");
 	  arSystem.start(); // start AR 
 	});
 	stopButton.addEventListener('click', () => {
-	  arSystem.stop(); // stop AR and video
+	  arSystem.stop(); // stop AR 
 	});
-	stopARButton.addEventListener('click', () => {
-	  arSystem.stopAR(); // stop AR only, but keep video
+	pauseButton.addEventListener('click', () => {
+	  arSystem.pause(); // pause AR, keep video feed
 	});
+	pauseKeepVideoButton.addEventListener('click', () => {
+	  arSystem.pause(true); // pause AR and video
+	});
+	unpauseButton.addEventListener('click', () => {
+	  arSystem.unpause(); // unpause AR and video
+	});
+
 
 	// arReady event triggered when ready
 	sceneEl.addEventListener("arReady", (event) => {
@@ -71,10 +80,12 @@ We will go through the available events one by one in the following sub-sections
     </script>
   </head>
   <body>
-    <div>
+    <div style="position: absolute; z-index: 1000">
       <button id="example-start-button">Start</button>
+      <button id="example-pause-button">Pause</button>
+      <button id="example-pause-keep-video-button">Pause (keep video)</button>
+      <button id="example-unpause-button">UnPause</button>
       <button id="example-stop-button">Stop</button>
-      <button id="example-stop-ar-button">Stop AR</button>
     </div>
     <a-scene mindar="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.3.1/examples/assets/card-example/card.mind; autoStart: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
@@ -96,12 +107,13 @@ const sceneEl = document.querySelector('a-scene');
 const arSystem = sceneEl.systems["mindar-system"];
 ```
 
-`arSystem` provides 3 api call
+`arSystem` provides a few api call to control the engine lifecycle 
 
 ```
-arSystem.start(); // start AR 
-arSystem.stop(); // start AR and camera feed
-arSystem.stopAR(); // stop AR only, but keep camera feed 
+arSystem.start(); // start the engine 
+arSystem.stop(); // stop the engine
+arSystem.pause(keepVideo=false); // pause the engine. It has an optional parameter. if true, then ar will stop, but camera feed will keep
+arSystem.unpause(); // unpause
 ```
 
 By default, AR engine will start immediately, but you can disable the auto start by giving a param `autoStart: false` inside `<a-scene>`

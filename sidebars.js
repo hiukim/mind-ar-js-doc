@@ -5,6 +5,10 @@ module.exports = {
       id: 'home'
     },
     {
+      type: 'doc',
+      id: 'installation'
+    },
+    {
       type: 'category',
       label: 'Quick Start',
       collapsed: false,
@@ -20,7 +24,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Examples',
-      collapsed: false,
+      collapsed: true,
       items: [
 	'examples/summary',
 	'examples/minimal',
@@ -34,8 +38,16 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'More Examples',
+      collapsed: true,
+      items: [
+	'more-examples/react',
+      ]
+    },
+    {
+      type: 'category',
       label: 'Tools',
-      collapsed: false,
+      collapsed: true,
       items: [
 	'tools/compile'
       ]

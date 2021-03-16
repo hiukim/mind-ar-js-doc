@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.3.1/dist/mindar.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.3.2/dist/mindar.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
@@ -11,17 +11,25 @@
 
 	const startButton = document.querySelector("#example-start-button");
 	const stopButton = document.querySelector("#example-stop-button");
-	const stopARButton = document.querySelector("#example-stop-ar-button");
+	const pauseButton = document.querySelector("#example-pause-button");
+	const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
+	const unpauseButton = document.querySelector("#example-unpause-button");
 
 	startButton.addEventListener('click', () => {
 	  console.log("start");
 	  arSystem.start(); // start AR 
 	});
 	stopButton.addEventListener('click', () => {
-	  arSystem.stop(); // stop AR and video
+	  arSystem.stop(); // stop AR 
 	});
-	stopARButton.addEventListener('click', () => {
-	  arSystem.stopAR(); // stop AR only, but keep video
+	pauseButton.addEventListener('click', () => {
+	  arSystem.pause(); // pause AR, keep video feed
+	});
+	pauseKeepVideoButton.addEventListener('click', () => {
+	  arSystem.pause(true); // pause AR and video
+	});
+	unpauseButton.addEventListener('click', () => {
+	  arSystem.unpause(); // unpause AR and video
 	});
 
 	// arReady event triggered when ready
@@ -52,10 +60,12 @@
     </script>
   </head>
   <body>
-    <div>
+    <div style="position: absolute; z-index: 1000">
       <button id="example-start-button">Start</button>
+      <button id="example-pause-button">Pause</button>
+      <button id="example-pause-keep-video-button">Pause (keep video)</button>
+      <button id="example-unpause-button">UnPause</button>
       <button id="example-stop-button">Stop</button>
-      <button id="example-stop-ar-button">Stop AR</button>
     </div>
     <a-scene mindar="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.3.1/examples/assets/card-example/card.mind; autoStart: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
