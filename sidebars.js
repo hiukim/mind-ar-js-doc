@@ -45,6 +45,10 @@ module.exports = {
       ]
     },
     {
+      type: 'doc',
+      id: 'core-api'
+    },
+    {
       type: 'category',
       label: 'Tools',
       collapsed: true,
