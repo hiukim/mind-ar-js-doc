@@ -136,6 +136,7 @@ export const VisualizeTab = ({dataList, exportedBuffer}) => {
     const width = (100 * dataList[targetIndex].imageList[keyframeIndex].scale);
     return {
       width: width + "%",
+      maxHeight: "100%",
       top: ((100-width)/2) + "%"
     }
   }, [dataList, targetIndex, keyframeIndex]);

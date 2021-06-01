@@ -25,7 +25,7 @@ Now, let's start with something simple to display a rectanglar plane just on top
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.3.1/dist/mindar.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>
   </head>
 
   <body>
@@ -47,7 +47,7 @@ Let's digest them:
 
 ### mind-ar-js library 
 
-`<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.3.1/dist/mindar.prod.js"></script>`
+`<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>`
 
 It's the `mindar` library hosted in cdn. This is the only thing you need to build a web AR application!
 
