@@ -7,9 +7,9 @@ sidebar_label: Compile Target Images
 import cardImage from '@site/static/img/demo/card.png'
 
 
-Before working on the webpage, we first need to preprocess (a.k.a. compile) the images. We need to do a thorough scan of the images and extract interesting locations (a.k.a. feature points) so we can detect and track the images later. 
+Before working on the webpage, we first need to preprocess (a.k.a. compile) the images. We need to scan the images and extract interesting locations (a.k.a. feature points) so we can detect and track the images later. 
 
-This preprocessing step takes time, therefore we want to do it beforehand so to reduce the loading time when users actually use your AR app later. 
+This preprocessing step takes time, therefore we want to do it beforehand as to reduce the loading time when users actually use your AR app later. 
 
 MindAR comes with a super friendly compilation tool to do this. [Image Targets Compiler](../tools/compile)
 
@@ -30,12 +30,6 @@ In this QuickStart demo, we will be using this image, so please <a href={cardIma
 
 Then, drop this image to the compiler and click `Start`.
 
-:::note
-
-As a benchmark, my macbook pro took around 10-30 seconds to compile the above image.
-
-:::
-
 ## step 2 - visualize the features 
 
 Once the compilation is done, we will see some features visualization.
@@ -46,11 +40,12 @@ Once the compilation is done, we will see some features visualization.
 
 </blockquote>
  
-This visualization tool gives you an idea of the feature distributions of your images. We will have some blog posts coming up to explain the details later, so stay tuned!
+This visualization tool gives you an idea of the feature distributions of your images. In general, you want to have good amount of features with well distribution. Actually, this sample isn't a very good one because you can see a blank space on the top left corner.
 
 <br/><br/>
 
-In general, you want to have good amount of features with well distribution. Actually, this sample isn't a very good one because you can see a blank space on the top left corner.
+If you want to learn more about that, this article series give a detailed explanation about how to choose good target images. 
+https://blog.pictarize.com/how-to-choose-a-good-target-image-for-tracking-in-ar-part-1/
 
 ## step 3 - download .mind file 
 

@@ -33,7 +33,7 @@ First, let's see how to disable the default UI. Inside `<a-scene>`, you can spec
 3. `uiScanning=no`
 
 ```
-<a-scene mindar="imageTargetSrc: ./targets.mind; uiError=no; uiLoading=no; uiScanning=no"/>
+<a-scene mindar-image="imageTargetSrc: ./targets.mind; uiError=no; uiLoading=no; uiScanning=no"/>
 ```
 
 If you do this, then none of the above will be shown.
@@ -62,7 +62,7 @@ For example, I can modify the scanning screen to include a semi-transparent targ
   <div id="example-scanning-overlay" class="hidden">
     ...
   </div>
-  <a-scene mindar="uiScanning: #example-scanning-overlay; imageTargetSrc: ./targets.mind">
+  <a-scene mindar-image="uiScanning: #example-scanning-overlay; imageTargetSrc: ./targets.mind">
     ...
   </a-scene>
 </body>
@@ -78,4 +78,4 @@ You can do the exact same thing with Loading and Error screen.
 
 If you want more freedom, you can disable our default ui completely and write your own. You might want to do this because, for example, you want the loading screen to show longer because you want to wait for other things other than MindAR. 
 
-To do that, you will have to interact with MindAR API. This will be discussed in the next example.
+To do that, you will have to interact with events API. This will be discussed in the next example.

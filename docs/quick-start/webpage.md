@@ -25,11 +25,13 @@ Now, let's start with something simple to display a rectanglar plane just on top
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.aframe.js"></script>
   </head>
 
   <body>
-    <a-scene mindar="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0">
         <a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
@@ -45,11 +47,16 @@ Let's digest them:
 
 `html`, `head`, `meta` and `body` are just standard html stuff, and we will skip.
 
-### mind-ar-js library 
+### mind-ar-js and aframe library 
 
-`<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>`
+```
+  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.aframe.js"></script>
+```
 
-It's the `mindar` library hosted in cdn. This is the only thing you need to build a web AR application!
+They are the `mindar` and `aframe` library hosted in cdn. They are the only things you need to build a web AR application!
 
 ### aframe 
 MindAR comes with an AFRAME extension that allows you to construct a 3D scene easily. We will not go into the details of AFRAME in this tutorial. If you want to learn more about it, please refer to <a href="https://aframe.io/" target="_blank">AFRAME</a>
@@ -58,7 +65,7 @@ In short, you can see the `<a-scene>` block inside `body`. This is the main part
 
 We'll highlight two things here related to MindAR. 
 
-1. Within `<a-scene>` you can see a property `mindar="imageTargetSrc: ./targets.mind;"` It tells the engine where is the compiled `.mind` file you built earlier.
+1. Within `<a-scene>` you can see a property `mindar-image="imageTargetSrc: ./targets.mind;"` It tells the engine where is the compiled `.mind` file you built earlier.
 
 2. There is an `<a-entity>`, with a prpoerty `mindar-image-target="targetIndex: 0"`. This tells the engine to detect and track a particular image target. The `targetIndex` is always `0`, if your `targets.mind` contains only a single image. You can however compile multiple images together, and the `targetIndex` will follows the order of the images. We will talk more this later when we have multiple image targets. 
 
@@ -69,7 +76,7 @@ Remember this. The AR engine only does ONE thing! - It updates the visibility an
 
 The AR engine consume your camera feed, then detect, track the target images and update the visibility and positions of this a-entity. It means, whatever attached to the entity will be properly magically displayed accordingly. Once you have this setup properly, what you usually need to do is to construct the content inside this `a-entity` according to your application needs.
 
-This is minimal case, you see a `<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>`. This is the object we want to show on top of the target image. Obviously, it's a semi-transparent blue plane.
+This is minimal case, you see a `<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>`. This is the object we want to show on top of the target image. Obviously, it's just a blue plane.
 
 :::tip
 width=1 means the width is the same as the target image

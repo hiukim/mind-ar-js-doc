@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Quick Start',
+      label: 'Image Tracking Quick Start',
       collapsed: false,
       items: [
 	'quick-start/overview',
@@ -23,7 +23,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Examples',
+      label: 'Image Tracking Examples',
       collapsed: true,
       items: [
 	'examples/summary',
@@ -38,16 +38,30 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Face Tracking Quick Start',
+      collapsed: false,
+      items: [],
+    },
+    {
+      type: 'category',
+      label: 'Face Tracking Examples',
+      collapsed: false,
+      items: [],
+    },
+    {
+      type: 'category',
       label: 'More Examples',
       collapsed: true,
       items: [
 	'more-examples/react',
       ]
     },
+    /*
     {
       type: 'doc',
       id: 'core-api'
     },
+    */
     {
       type: 'category',
       label: 'Tools',

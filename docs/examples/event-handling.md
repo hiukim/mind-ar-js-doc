@@ -20,11 +20,13 @@ We will go through the available events one by one in the following sub-sections
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/dist/mindar.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
-	const arSystem = sceneEl.systems["mindar-system"];
+	const arSystem = sceneEl.systems["mindar-image-system"];
 	const exampleTarget = document.querySelector('#example-target');
 	const examplePlane = document.querySelector('#example-plane');
 
@@ -50,7 +52,6 @@ We will go through the available events one by one in the following sub-sections
 	unpauseButton.addEventListener('click', () => {
 	  arSystem.unpause(); // unpause AR and video
 	});
-
 
 	// arReady event triggered when ready
 	sceneEl.addEventListener("arReady", (event) => {
@@ -87,7 +88,7 @@ We will go through the available events one by one in the following sub-sections
       <button id="example-unpause-button">UnPause</button>
       <button id="example-stop-button">Stop</button>
     </div>
-    <a-scene mindar="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@0.4.2/examples/assets/card-example/card.mind; autoStart: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.mind; autoStart: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
 
       <a-entity id="example-target" mindar-image-target="targetIndex: 0">
@@ -104,7 +105,7 @@ The first thing to introduce is the `arSystem` component. It's embedded inside `
 
 ```
 const sceneEl = document.querySelector('a-scene');
-const arSystem = sceneEl.systems["mindar-system"];
+const arSystem = sceneEl.systems["mindar-image-system"];
 ```
 
 `arSystem` provides a few api call to control the engine lifecycle 
@@ -191,4 +192,4 @@ examplePlane.addEventListener("click", event => {
 
 ## Wrapping up
 
-Cool, you have now basically learnt everything about MindAR. It should gives you enough tool to do some very cool applications! 
+Cool, you have now basically learnt everything about MindAR image tracking. It should gives you enough tool to do some very cool applications! 

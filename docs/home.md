@@ -5,4 +5,8 @@ sidebar_label: Home
 slug: /
 ---
 
-Nothing to say at the moment. Please go to [Quick Start](./quick-start/overview.md) =)
+MindAR is an opensource web augmented reality library. It supports Image Tracking and Face Tracking.
+
+For Image Tracking, please go to [Image Tracking Quick Start](./quick-start/overview)
+
+For Face Tracking, please wait... (documention will be ready soon)

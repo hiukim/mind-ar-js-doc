@@ -15,7 +15,7 @@ export const UploadTab = ({onDataReady}) => {
   const [dropzone, setDropzone] = useState(null);
   const [percentage, setPercentage] = useState(null);
   const refDropzone = useRef(null);
-  const compiler = new window.MINDAR.Compiler();
+  const compiler = new window.MINDAR.IMAGE.Compiler();
   const loadImage = useCallback(async (file) => {
     return new Promise((resolve, reject) => {
       let img = new Image()
@@ -101,8 +101,7 @@ export const VisualizeTab = ({dataList, exportedBuffer}) => {
   }, []);
   useEffect(() => {
     const targetImage = dataList[targetIndex].imageList[keyframeIndex];
-    const matchingPoints = dataList[targetIndex].matchingData[keyframeIndex].points;
-    const trackingPoints = dataList[targetIndex].trackingData[keyframeIndex].points;
+    const matchingPoints = [...dataList[targetIndex].matchingData[keyframeIndex].maximaPoints, dataList[targetIndex].matchingData[keyframeIndex].minimaPoints];
     const canvas = canvasRef.current;
     canvas.width = targetImage.width;
     canvas.height = targetImage.height;
@@ -120,10 +119,6 @@ export const VisualizeTab = ({dataList, exportedBuffer}) => {
     for (let i = 0; i < matchingPoints.length; i++) {
       const point = matchingPoints[i];
       drawPoint(ctx, '#ff0000', Math.round(point.x), Math.round(point.y), point.scale);
-    }
-    for (let i = 0; i < trackingPoints.length; i++) {
-      const point = trackingPoints[i];
-      drawRect(ctx, '#0000ff', Math.round(point.x), Math.round(point.y), 44);
     }
   }, [dataList, targetIndex, keyframeIndex]);
   const numTargetRange = useMemo(() => {
@@ -159,7 +154,7 @@ export const VisualizeTab = ({dataList, exportedBuffer}) => {
 		'tabs__item--active': targetIndex === index,
 	      }, styles.tabItem)}
 	      key={index}
-	      onClick={() => {setTargetIndex(index)}}>
+	      onClick={() => {setTargetIndex(index); setKeyframeIndex(0)}}>
 	      Image {index+1}
 	    </li>
 	  ))}
