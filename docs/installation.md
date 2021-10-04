@@ -36,9 +36,21 @@ There are two generally two ways to install the library.
 ## 2. npm  
 
 ```
-> npm i mind-ar
+> npm i mind-ar --save
+> npm i aframe --save
 ```
 
+### Image Tracking
+
 ```
-> import 'mind-ar'
+import 'mind-ar/dist/mindar-image.prod.js';
+import 'aframe';
+import 'mind-ar/dist/mindar-image-aframe.prod.js';
+```
+
+### Face Tracking
+```
+import 'mind-ar/dist/mindar-face.prod.js';
+import 'aframe';
+import 'mind-ar/dist/mindar-face-aframe.prod.js';
 ```
