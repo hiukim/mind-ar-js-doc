@@ -40,7 +40,14 @@ module.exports = {
       type: 'category',
       label: 'Face Tracking Quick Start',
       collapsed: false,
-      items: [],
+      items: [
+	'face-tracking-quick-start/overview',
+	'face-tracking-quick-start/webpage',
+	'face-tracking-quick-start/run',
+	'face-tracking-quick-start/assets',
+	'face-tracking-quick-start/occluder',
+	'face-tracking-quick-start/wrapup',
+      ],
     },
     {
       type: 'category',
