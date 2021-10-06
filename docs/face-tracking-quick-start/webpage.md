@@ -16,7 +16,7 @@ Let's start with a minimal example to understand how face tracking work in MindA
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.aframe.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face-aframe.prod.js"></script>
   </head>
 
   <body>
@@ -42,7 +42,7 @@ Let's digest them:
 ```
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.prod.js"></script>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.aframe.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face-aframe.prod.js"></script>
 ```
 
 They are the `mindar` and `aframe` library hosted in cdn. They are the only things you need to build a web AR application!

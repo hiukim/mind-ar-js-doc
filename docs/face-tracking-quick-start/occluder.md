@@ -37,7 +37,7 @@ Putting it together, your new html page should be like this:
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.aframe.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face-aframe.prod.js"></script>
   </head>
 
   <body>
