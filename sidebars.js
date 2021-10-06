@@ -53,7 +53,12 @@ module.exports = {
       type: 'category',
       label: 'Face Tracking Examples',
       collapsed: false,
-      items: [],
+      items: [
+	'face-tracking-examples/summary',
+	'face-tracking-examples/minimal',
+	'face-tracking-examples/tryon',
+	'face-tracking-examples/events-handling',
+      ],
     },
     {
       type: 'category',

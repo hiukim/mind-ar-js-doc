@@ -66,6 +66,10 @@ Remember this. The AR engine does ONE thing! - It updates the visibility and pos
 
 MindAR engine will scale the entity according to the size of the face. More specially, the width of the face is 1 unit of length. You can see that in the above example, we set the green sphere size to radius 0.1, which is rouhgly 20% of the face width.  
 
+### rotation
+
+MindAR engine uses the relative positions of two eyes to compute the face orientation, and the anchored objects will automatically rotated accordingly.
+
 
 ### anchor points
 
