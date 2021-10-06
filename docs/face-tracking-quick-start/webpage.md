@@ -54,9 +54,9 @@ In short, you can see the `<a-scene>` block inside `body`. This is the main part
 
 We'll highlight two things here related to MindAR. 
 
-1. Within `<a-scene>` you can see a property `mindar-face`. It basically tells MindAR engine to control this scene
+1. Within `<a-scene>` you can see a property `mindar-face`. It tells MindAR engine to control this scene
 
-2. There is an `<a-entity>`, with a prpoerty `mindar-face-target="anchorIndex: 1"`. This tells the engine to track a particular anchor position (in this case position "1", which is the nose tip), and anchor this entity to that position of the face.
+2. There is an `<a-entity>`, with a prpoerty `mindar-face-target="anchorIndex: 1"`. It tells the engine to track a particular anchor position (in this case position "1", which is the nose tip), and stick this entity to that position.
 
 :::tip
 Remember this. The AR engine does ONE thing! - It updates the visibility and positions of a-entity
@@ -64,7 +64,7 @@ Remember this. The AR engine does ONE thing! - It updates the visibility and pos
 
 ### scale
 
-MindAR engine will scale the entity according to the size of the face. More specially, the width of the face is 1 unit of length. You can see that in the above example, we set the green sphere size to radius 0.1, which is rouhgly 20% of the face width.  
+MindAR engine will scale the entity according to the size of the face. More specially, the width of the face is 1 unit of length. You can see that we set the green sphere size to 0.1 radius in the above example, and it will cover rougly 20% of the face in width.
 
 ### rotation
 

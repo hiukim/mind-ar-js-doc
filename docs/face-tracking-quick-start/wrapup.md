@@ -6,7 +6,7 @@ sidebar_label: Wrapping Up
 
 That's more or less everything you need to know about face tracking in MindAR. It's extremely to use, you pick anchor points and put objects there. 
 
-To make a fully functional virtual tryon application, you just need to prepare more 3D objects and add them to the scene. Then you programatically control their visibilities.
+To make a fully functional virtual try-on application, you just need to prepare more 3D objects and add them to the scene. Then you programatically control their visibilities.
 
 ### Toggle visiblity
 

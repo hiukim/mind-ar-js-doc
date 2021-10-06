@@ -15,7 +15,7 @@ I believe there are many possible workarounds to that problems, like setting the
 If you are a web developer, I'm sure you probably have some sort of localhost already in your machine. If not, you can try this chrome extension: <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" target="_blank">Web Server for Chrome</a>. It will launch a simple web server, and you can use it to open the `index.html` built in the last section.
 
 ## Effect 
-If you can successfully launch the page, the camera will start. After you point it to any face, you will see a green sphere stick at the nose tip.
+If you can successfully launch the page, the camera will start. After you point it to any face, you will see a green sphere sticked on the nose tip.
 
 <img src={minimalDemoImage} width="300" />
 
