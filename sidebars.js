@@ -11,7 +11,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Image Tracking Quick Start',
-      collapsed: false,
+      collapsed: true,
       items: [
 	'quick-start/overview',
 	'quick-start/compile',
@@ -39,7 +39,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Face Tracking Quick Start',
-      collapsed: false,
+      collapsed: true,
       items: [
 	'face-tracking-quick-start/overview',
 	'face-tracking-quick-start/webpage',
@@ -52,7 +52,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Face Tracking Examples',
-      collapsed: false,
+      collapsed: true,
       items: [
 	'face-tracking-examples/summary',
 	'face-tracking-examples/minimal',
@@ -66,6 +66,8 @@ module.exports = {
       collapsed: true,
       items: [
 	'more-examples/react',
+	'more-examples/threejs-image',
+	'more-examples/threejs-face',
       ]
     },
     /*
