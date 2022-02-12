@@ -4,6 +4,7 @@ title: Events Handling
 sidebar_label: Events Handling
 ---
 
+import {customFields} from '/docusaurus.config.js';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This example demonstrates how to handle events from MindAR engine. It also explains how to programatically control the lifecycle of AR engine, including start, stop and switching camera.
@@ -14,43 +15,38 @@ The full source code is attached first and we will go through them one by one.
 <a href={useBaseUrl('/face-tracking-samples/events.html')} target="_blank">Live Demo</a>
 
 ## Source
-```
+
+<code>
+{`
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face-aframe.prod.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
 	const arSystem = sceneEl.systems["mindar-face-system"];
-
 	const startButton = document.querySelector("#example-start-button");
 	const stopButton = document.querySelector("#example-stop-button");
 	const switchCameraButton = document.querySelector("#example-switch-camera-button");
-
 	// arReady event triggered when ready
         sceneEl.addEventListener("arReady", (event) => {
 	  console.log("ar ready");
         });
-
 	// detect target found
         sceneEl.addEventListener("targetFound", event => {
           console.log("target found");
         });
-
 	// detect target lost
         sceneEl.addEventListener("targetLost", event => {
           console.log("target lost");
         });
-
 	// arError event triggered when something went wrong. Mostly browser compatbility issue
         sceneEl.addEventListener("arError", (event) => {
 	  console.log("ar error");
         });
-
 	startButton.addEventListener('click', () => {
 	  arSystem.start(); // start AR 
         });
@@ -62,7 +58,6 @@ The full source code is attached first and we will go through them one by one.
 	});
       });
     </script>
-   
     <style>
       body {
         margin: 0;
@@ -73,7 +68,6 @@ The full source code is attached first and we will go through them one by one.
         width: 100%;
         height: 100%;
       }
-
       #example-control-overlay {
 	position: fixed;
 	top: 0;
@@ -88,7 +82,6 @@ The full source code is attached first and we will go through them one by one.
       }
     </style>
   </head>
-
   <body>
     <div class="example-container">
       <div id="example-control-overlay" class="overlay">
@@ -98,10 +91,8 @@ The full source code is attached first and we will go through them one by one.
 	  <button id="example-switch-camera-button">Switch Camera</button>
 	</div>
       </div>
-
       <a-scene mindar-face="autoStart: false" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-camera active="false" position="0 0 0" look-controls="false"></a-camera>
-
         <a-entity mindar-face-target="anchorIndex: 1">
 	  <a-sphere color="green" radius="0.1"></a-sphere>
         </a-entity>
@@ -109,8 +100,8 @@ The full source code is attached first and we will go through them one by one.
     </div>
   </body>
 </html>
-
-```
+`}
+</code>
 
 ## arSystem
 

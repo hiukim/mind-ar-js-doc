@@ -4,6 +4,7 @@ title: Events Handling
 sidebar_label: Events Handling
 ---
 
+import {customFields} from '/docusaurus.config.js';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
@@ -16,26 +17,25 @@ To try this example, you need to run on desktop browser and open the development
 We will go through the available events one by one in the following sub-sections. 
 
 ### Complete Source
-```
+<code>
+{`
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
 	const arSystem = sceneEl.systems["mindar-image-system"];
 	const exampleTarget = document.querySelector('#example-target');
 	const examplePlane = document.querySelector('#example-plane');
-
 	const startButton = document.querySelector("#example-start-button");
 	const stopButton = document.querySelector("#example-stop-button");
 	const pauseButton = document.querySelector("#example-pause-button");
 	const pauseKeepVideoButton = document.querySelector("#example-pause-keep-video-button");
 	const unpauseButton = document.querySelector("#example-unpause-button");
-
 	startButton.addEventListener('click', () => {
 	  console.log("start");
 	  arSystem.start(); // start AR 
@@ -52,27 +52,22 @@ We will go through the available events one by one in the following sub-sections
 	unpauseButton.addEventListener('click', () => {
 	  arSystem.unpause(); // unpause AR and video
 	});
-
 	// arReady event triggered when ready
 	sceneEl.addEventListener("arReady", (event) => {
 	  // console.log("MindAR is ready")
 	});
-
 	// arError event triggered when something went wrong. Mostly browser compatbility issue
 	sceneEl.addEventListener("arError", (event) => {
 	  // console.log("MindAR failed to start")
 	});
-
 	// detect target found
 	exampleTarget.addEventListener("targetFound", event => {
 	  console.log("target found");
 	});
-
 	// detect target lost
 	exampleTarget.addEventListener("targetLost", event => {
 	  console.log("target lost");
 	});
-
 	// detect click event
 	examplePlane.addEventListener("click", event => {
 	  console.log("plane click");
@@ -88,16 +83,16 @@ We will go through the available events one by one in the following sub-sections
       <button id="example-unpause-button">UnPause</button>
       <button id="example-stop-button">Stop</button>
     </div>
-    <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.mind; autoStart: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
-
+    <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind; autoStart: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>\n
       <a-entity id="example-target" mindar-image-target="targetIndex: 0">
 	<a-plane id="example-plane" class="clickable" color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
       </a-entity>
     </a-scene>
   </body>
 </html>
-```
+`}
+</code>
 
 ## arSystem
 
@@ -169,7 +164,7 @@ When you want to do inteaction with the content, one thing you likely want to de
 First, you need to include the following `cursor` and `raycaster` in the `<a-camera>` element like this:
 
 ```
-<a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
+<a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
 
 ``` 
 

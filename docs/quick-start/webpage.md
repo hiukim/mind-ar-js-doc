@@ -4,6 +4,8 @@ title: Build the page
 sidebar_label: Build the page
 ---
 
+import {customFields} from '/docusaurus.config.js';
+
 Now you have the `targets.mind` file ready, we can start building the webpage.
 
 ## Preparation
@@ -21,13 +23,14 @@ First, create a clean folder for your project, let say `mindar-project`. Put the
 
 Now, let's start with something simple to display a rectanglar plane just on top of the target image. Open `index.html` with editor of your choices, and paste the following content:
 
-```
+<code>
+{`
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
   </head>
 
   <body>
@@ -39,7 +42,8 @@ Now, let's start with something simple to display a rectanglar plane just on top
     </a-scene>
   </body>
 </html>
-```
+`}
+</code>
 
 Let's digest them:
 
@@ -49,12 +53,13 @@ Let's digest them:
 
 ### mind-ar-js and aframe library 
 
-```
-  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.aframe.js"></script>
-```
+<code>
+{`<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image.prod.js"></script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image.aframe.js"></script>
+`}
+</code>
 
 They are the `mindar` and `aframe` library hosted in cdn. They are the only things you need to build a web AR application!
 

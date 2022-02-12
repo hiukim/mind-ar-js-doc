@@ -4,6 +4,7 @@ title: ThreeJS Image Tracking
 sidebar_label: ThreeJS Image
 ---
 
+import {customFields} from '/docusaurus.config.js';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import cardImage from '@site/static/img/demo/card.png'
 
@@ -16,34 +17,30 @@ You can use the following target image for testing:
 
 <img src={cardImage} width="300" />
 
-```
+<code>
+{`
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/dist/mindar-image-three.prod.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-three.prod.js"></script>
     <script type="module">
       const THREE = window.MINDAR.IMAGE.THREE;
       const mindarThree = new window.MINDAR.IMAGE.MindARThree({
 	container: document.querySelector("#container"),
-	imageTargetSrc: "https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/examples/image-tracking/assets/card-example/card.mind"
+	imageTargetSrc: "https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind"
       });
       const {renderer, scene, camera} = mindarThree;
-
       const anchor = mindarThree.addAnchor(0);
       const geometry = new THREE.PlaneGeometry(1, 0.55);
       const material = new THREE.MeshBasicMaterial( {color: 0x00ffff, transparent: true, opacity: 0.5} );
       const plane = new THREE.Mesh( geometry, material );
       anchor.group.add(plane);
-
       const start = async() => {
 	await mindarThree.start();
 	renderer.setAnimationLoop(() => {
 	  renderer.render(scene, camera);
 	});
       }
-
       const startButton = document.querySelector("#startButton");
       startButton.addEventListener("click", () => {
 	start();
@@ -53,7 +50,6 @@ You can use the following target image for testing:
 	mindarThree.renderer.setAnimationLoop(null);
       });
     </script>
-
     <style>
       body {
 	margin: 0;
@@ -77,9 +73,9 @@ You can use the following target image for testing:
       <button id="startButton">Start</button>
       <button id="stopButton">Stop</button>
     </div>
-
     <div id="container">
     </div>
   </body>
 </html>
-```
+`}
+</code>

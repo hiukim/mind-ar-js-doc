@@ -4,17 +4,21 @@ title: 3D Assets
 sidebar_label: 3D Assets 
 ---
 
+import {customFields} from '/docusaurus.config.js';
+
 It's an augmented reality app, so it's not fun without some 3D assets!
 
 ## Adding assets
 The first thing we need to do is to add some assets to the scene. In `AFRAME`, we do this by `a-assets`. Add this block of code inside the `<a-scene/>` element
 
-```
+<code>
+{`
 <a-assets>
-  <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png" />
-  <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
+  <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.png" />
+  <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
 </a-assets>
-```
+`}
+</code>
 
 The first one is actually our target image. The second one is a 3D model in `gltf` format. `AFRAME` basically supports all the standard 3D format, so you can probably replace it with the models of your choices later. 
 
@@ -45,23 +49,24 @@ Sorry, I'm not entirely sure what that does, but it seems like the rendering is 
 
 Putting it together, your html page is something like below.
 
-```
+<code>
+{`
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: ./targets.mind; showStats: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-        <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png" />
-        <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
+        <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.png" />
+        <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
       </a-assets>
-
+\n
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
+\n
       <a-entity mindar-image-target="targetIndex: 0">
         <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
         <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel" animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
@@ -69,7 +74,8 @@ Putting it together, your html page is something like below.
     </a-scene>
   </body>
 </html>
-```
+`}
+</code>
 
 The effect is what we saw in the Overview. Easy, right?
 

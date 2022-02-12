@@ -4,32 +4,35 @@ title: Build the page
 sidebar_label: Build the page
 ---
 
+import {customFields} from '/docusaurus.config.js';
+
 MindAR application can be as simple as a regular webpage, which is a single .html file.
 
 ### Minimal Example
 
 Let's start with a minimal example to understand how face tracking work in MindAR. Create a blank index.html with editor of your choices and paste the following content:
 
-```
+<code>
+{`
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
   </head>
 
   <body>
     <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-camera active="false" position="0 0 0"></a-camera>
-
       <a-entity mindar-face-target="anchorIndex: 1">
 	<a-sphere color="green" radius="0.1"></a-sphere>
       </a-entity>
     </a-scene>
   </body>
 </html>
-```
+`}
+</code>
 
 Let's digest them:
 
@@ -39,11 +42,12 @@ Let's digest them:
 
 ### mind-ar-js and aframe library 
 
-```
-  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.prod.js"></script>
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face-aframe.prod.js"></script>
-```
+<code>
+{`<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face.prod.js"></script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
+`}
+</code>
 
 They are the `mindar` and `aframe` library hosted in cdn. They are the only things you need to build a web AR application!
 

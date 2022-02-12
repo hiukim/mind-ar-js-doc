@@ -4,6 +4,8 @@ title: Installation
 sidebar_label: Installation
 ---
 
+import {customFields} from '/docusaurus.config.js';
+
 MindAR project can be run directly in plain static HTML file. It's super easy! 
 
 MindAR comes with different types of tracking capabilities, including Image Tracking and Face Tracking. To minimize library size, each of these are independently built. Moreover, MindAR provides native support for three.js or AFRAME. They are also being built independently. So altogehter, there are 2x2 = 4 sets of distributions.
@@ -22,19 +24,21 @@ There are two generally two ways to install the library.
 
 #### Image Tracking
 
-```
-<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/dist/mindar-image.prod.js"></script>
+<code>
+{`<script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image.prod.js"></script>
 <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/dist/mindar-image-aframe.prod.js"></script>
-```
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
+`}
+</code>
 
 #### Face Tracking
 
-```
-<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/dist/mindar-face.prod.js"></script>
+<code>
+{`<script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face.prod.js"></script>
 <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/dist/mindar-face-aframe.prod.js"></script>
-```
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
+`}
+</code>
 
 ### 2. npm  
 
@@ -66,16 +70,18 @@ Three.js integration is simpler. You only need to import a single script.
 
 #### Image Tracking
 
-```
-<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/dist/mindar-image-three.prod.js"></script>
-```
+<code>
+{`<script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-three.prod.js"></script>
+`}
+</code>
 
 #### Face Tracking
 
-```
-<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.0/dist/mindar-face-three.prod.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.0/dist/mindar-face-three.prod.js"></script>
-```
+<code>
+{`script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face-three.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-three.prod.js"></script>
+`}
+</code>
 
 ### 2. npm  
 

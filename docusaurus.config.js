@@ -93,9 +93,12 @@ module.exports = {
   ],
   scripts: [
     'https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js',
-    'https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js',
+    'https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.3/dist/mindar-image.prod.js',
   ],
   stylesheets: [
     'https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css'
-  ]
+  ],
+  customFields: {
+    libVersion: "1.1.3"
+  }
 };

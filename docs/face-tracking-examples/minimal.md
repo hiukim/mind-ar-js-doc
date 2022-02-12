@@ -4,6 +4,7 @@ title: Minimal
 sidebar_label: Minimal 
 ---
 
+import {customFields} from '/docusaurus.config.js';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This is a minimal example. It detects a face and display a green sphere on nose tip. 
@@ -16,13 +17,14 @@ We have a step-by-step tutorial in `Quick Start`. If you are new to MindAR, plea
 <a href={useBaseUrl('/face-tracking-samples/minimal.html')} target="_blank">Live Demo</a>
 
 ## Source
-```
+<code>
+{`
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-face-aframe.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
   </head>
 
   <body>
@@ -34,4 +36,5 @@ We have a step-by-step tutorial in `Quick Start`. If you are new to MindAR, plea
     </a-scene>
   </body>
 </html>
-```
+`}
+</code>
