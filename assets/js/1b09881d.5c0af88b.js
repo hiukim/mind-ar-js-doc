@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdoc=self.webpackChunkdoc||[]).push([[5087],{5778:function(a){a.exports=JSON.parse('{"allTagsPath":"/mind-ar-js-doc/blog/tags","slug":"/mind-ar-js-doc/blog/tags/facebook","name":"facebook","count":1,"permalink":"/mind-ar-js-doc/blog/tags/facebook"}')}}]);
