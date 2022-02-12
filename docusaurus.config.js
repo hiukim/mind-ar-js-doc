@@ -4,7 +4,7 @@ module.exports = {
   tagline: 'web augmented reality - augmented images',
   url: 'https://hiukim.github.io',
   baseUrl: '/mind-ar-js-doc/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'hiukim', // Usually your GitHub org/user name.
