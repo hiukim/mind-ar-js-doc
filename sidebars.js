@@ -19,6 +19,7 @@ module.exports = {
 	'quick-start/run',
 	'quick-start/assets',
 	'quick-start/wrapup',
+	'quick-start/tracking-config',
       ]
     },
     {
