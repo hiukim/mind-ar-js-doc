@@ -201,3 +201,9 @@ This is a caution
 This is a warning
 
 :::
+
+
+## Dummy Images
+![img](/img/demo/course-banner.jpeg)
+
+![img](/img/demo/pictarize-studio.png)
