@@ -69,6 +69,7 @@ module.exports = {
 	'more-examples/react',
 	'more-examples/threejs-image',
 	'more-examples/threejs-face',
+	'more-examples/threejs-face-facemesh',
       ]
     },
     /*
