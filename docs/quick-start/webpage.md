@@ -21,7 +21,7 @@ First, create a clean folder for your project, let say `mindar-project`. Put the
 
 ## Minimal example
 
-Now, let's start with something simple to display a rectanglar plane just on top of the target image. Open `index.html` with editor of your choices, and paste the following content:
+Now, let's start with something simple to display a rectangular plane just on top of the target image. Open `index.html` with editor of your choices, and paste the following content:
 
 <code>
 {`
@@ -72,7 +72,7 @@ We'll highlight two things here related to MindAR.
 
 1. Within `<a-scene>` you can see a property `mindar-image="imageTargetSrc: ./targets.mind;"` It tells the engine where is the compiled `.mind` file you built earlier.
 
-2. There is an `<a-entity>`, with a prpoerty `mindar-image-target="targetIndex: 0"`. This tells the engine to detect and track a particular image target. The `targetIndex` is always `0`, if your `targets.mind` contains only a single image. You can however compile multiple images together, and the `targetIndex` will follows the order of the images. We will talk more this later when we have multiple image targets. 
+2. There is an `<a-entity>`, with a property `mindar-image-target="targetIndex: 0"`. This tells the engine to detect and track a particular image target. The `targetIndex` is always `0`, if your `targets.mind` contains only a single image. You can however compile multiple images together, and the `targetIndex` will follows the order of the images. We will talk more this later when we have multiple image targets. 
 
 
 :::tip
@@ -81,7 +81,7 @@ Remember this. The AR engine only does ONE thing! - It updates the visibility an
 
 The AR engine consume your camera feed, then detect, track the target images and update the visibility and positions of this a-entity. It means, whatever attached to the entity will be properly magically displayed accordingly. Once you have this setup properly, what you usually need to do is to construct the content inside this `a-entity` according to your application needs.
 
-This is minimal case, you see a `<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>`. This is the object we want to show on top of the target image. Obviously, it's just a blue plane.
+This is minimal case, you see a `<a-plane color="blue" opacity="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>`. This is the object we want to show on top of the target image. Obviously, it's just a blue plane.
 
 :::tip
 width=1 means the width is the same as the target image

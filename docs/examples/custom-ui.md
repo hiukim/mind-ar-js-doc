@@ -7,7 +7,7 @@ sidebar_label: Custom UI
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import customScanning from '@site/static/img/demo/custom-scanning.jpeg'
 
-MindAR comes with a set of default UI to help you bootstrap your application quickly. More specically, it comes with the followings:
+MindAR comes with a set of default UI to help you bootstrap your application quickly. More specially, it comes with the followings:
 
 ## Default UI
 
