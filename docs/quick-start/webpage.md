@@ -72,7 +72,7 @@ We'll highlight two things here related to MindAR.
 
 1. Within `<a-scene>` you can see a property `mindar-image="imageTargetSrc: ./targets.mind;"` It tells the engine where is the compiled `.mind` file you built earlier.
 
-2. There is an `<a-entity>`, with a prpoerty `mindar-image-target="targetIndex: 0"`. This tells the engine to detect and track a particular image target. The `targetIndex` is always `0`, if your `targets.mind` contains only a single image. You can however compile multiple images together, and the `targetIndex` will follows the order of the images. We will talk more this later when we have multiple image targets. 
+2. There is an `<a-entity>`, with a property `mindar-image-target="targetIndex: 0"`. This tells the engine to detect and track a particular image target. The `targetIndex` is always `0`, if your `targets.mind` contains only a single image. You can however compile multiple images together, and the `targetIndex` will follows the order of the images. We will talk more this later when we have multiple image targets. 
 
 
 :::tip
