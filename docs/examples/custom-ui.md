@@ -28,12 +28,12 @@ All of these are customizable, and there are two levels of customization.
 
 First, let's see how to disable the default UI. Inside `<a-scene>`, you can specify the following params: 
 
-1. `uiError=no`
-2. `uiLoading=no`
-3. `uiScanning=no`
+1. `uiError:no`
+2. `uiLoading:no`
+3. `uiScanning:no`
 
 ```
-<a-scene mindar-image="imageTargetSrc: ./targets.mind; uiError=no; uiLoading=no; uiScanning=no"/>
+<a-scene mindar-image="imageTargetSrc: ./targets.mind; uiError:no; uiLoading:no; uiScanning:no"/>
 ```
 
 If you do this, then none of the above will be shown.
