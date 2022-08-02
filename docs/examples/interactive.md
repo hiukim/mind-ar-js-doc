@@ -1,6 +1,6 @@
 ---
 id: interative 
-title: Intereactive
+title: Interactive
 sidebar_label: Interactive
 ---
 

@@ -8,7 +8,7 @@ import {customFields} from '/docusaurus.config.js';
 
 MindAR project can be run directly in plain static HTML file. It's super easy! 
 
-MindAR comes with different types of tracking capabilities, including Image Tracking and Face Tracking. To minimize library size, each of these are independently built. Moreover, MindAR provides native support for three.js or AFRAME. They are also being built independently. So altogehter, there are 2x2 = 4 sets of distributions.
+MindAR comes with different types of tracking capabilities, including Image Tracking and Face Tracking. To minimize library size, each of these are independently built. Moreover, MindAR provides native support for three.js or AFRAME. They are also being built independently. So altogether, there are 2x2 = 4 sets of distributions.
 
 ## AFRAME installation
 

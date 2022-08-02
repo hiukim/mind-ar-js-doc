@@ -18,7 +18,7 @@ It's a common problem in augmented reality application. AR application does not 
 
 ## Occluder
 
-To solve this issue, we will need to add an aribitrary 3D head-like object in the scene. But unlike a regular 3D object, this arbitrary head has two special properties. First, obviously it needs to be transparent. Second, despite being transparent, it still need to cover every behind. Normally, we call this kind of special 3D objects as occluders.
+To solve this issue, we will need to add an arbitrary 3D head-like object in the scene. But unlike a regular 3D object, this arbitrary head has two special properties. First, obviously it needs to be transparent. Second, despite being transparent, it still need to cover every behind. Normally, we call this kind of special 3D objects as occluders.
 
 Adding a occluder object is very similar to adding a regular object. In MindAR, you just need to add a property `mindar-face-occluder` to the entity.
 

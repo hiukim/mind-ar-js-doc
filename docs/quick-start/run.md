@@ -22,7 +22,7 @@ If you can successfully launch the page, the camera will start. After you point 
 
 ## How to Test
 
-It's likely that you now are using your desktop computer to go through this tutorial. In that case, you can start run the webpage with your computer, which hopefully has equiped with a webcam.
+It's likely that you now are using your desktop computer to go through this tutorial. In that case, you can start run the webpage with your computer, which hopefully has equipped with a webcam.
 
 Then, you can use your mobile phone to open this target image, and put your phone screen in front of your desktop webcam to see the effect.
 

@@ -42,7 +42,7 @@ They are designed to be read in order. But I'm sure you can skip if you have bas
     </tr>
     <tr>
       <td><a href="./interative">Interactive</a></td>
-      <td>This is a comprehensive example. It shows you how to create an interative applications by utilizing all the available features</td>
+      <td>This is a comprehensive example. It shows you how to create an interactive applications by utilizing all the available features</td>
     </tr>
   </tbody>
 </table>

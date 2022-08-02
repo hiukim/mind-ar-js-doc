@@ -7,7 +7,7 @@ sidebar_label: Events Handling
 import {customFields} from '/docusaurus.config.js';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This example demonstrates how to handle events from MindAR engine. It also explains how to programatically control the lifecycle of AR engine, including start, stop and switching camera.
+This example demonstrates how to handle events from MindAR engine. It also explains how to programmatically control the lifecycle of AR engine, including start, stop and switching camera.
 
 The full source code is attached first and we will go through them one by one.
 
@@ -127,7 +127,7 @@ By default, AR engine will start immediately, but you can disable the auto start
 MindAR will fire the events when the followings happen:
 
 ### `arReady`
-After `arSystem.start()`, or autostart, AR engine needs to boot up, when it's ready, this event will be fired up. You can listen to this event throught the scene element
+After `arSystem.start()`, or autostart, AR engine needs to boot up, when it's ready, this event will be fired up. You can listen to this event through the scene element
 
 ```
 const sceneEl = document.querySelector('a-scene');

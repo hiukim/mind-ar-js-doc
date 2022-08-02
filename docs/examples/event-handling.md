@@ -119,7 +119,7 @@ By default, AR engine will start immediately, but you can disable the auto start
 MindAR will fire the events when happen:
 
 ### `arReady`
-After `arSystem.start()`, or autostart, AR engine needs to boot up, when it's ready, this event will be fired up. You can listen to this event throught the scene element
+After `arSystem.start()`, or autostart, AR engine needs to boot up, when it's ready, this event will be fired up. You can listen to this event through the scene element
 
 ```
 const sceneEl = document.querySelector('a-scene');
@@ -159,7 +159,7 @@ exampleTarget.addEventListener("targetLost", event => {
 ```
 
 ### `click`
-When you want to do inteaction with the content, one thing you likely want to detect is when the user click/touch a certain elements. Actually, this is `AFRAME` stuff, but we'll also included here for reference.
+When you want to do interaction with the content, one thing you likely want to detect is when the user click/touch a certain elements. Actually, this is `AFRAME` stuff, but we'll also included here for reference.
 
 First, you need to include the following `cursor` and `raycaster` in the `<a-camera>` element like this:
 
@@ -171,7 +171,7 @@ First, you need to include the following `cursor` and `raycaster` in the `<a-cam
 and then in the object that you want to detect, add a class `clickable`. Actually, it doesn't mean to be `clickable`, but the same as what you specified in the `raycaster` above.
 
 ```
-<a-plane id="example-plane" class="clickable" color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+<a-plane id="example-plane" class="clickable" color="blue" opacity="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
 
 ```
 
