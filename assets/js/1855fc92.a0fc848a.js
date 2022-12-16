@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdoc=self.webpackChunkdoc||[]).push([[4437],{7690:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/mind-ar-js-doc/blog/tags/hola","allTagsPath":"/mind-ar-js-doc/blog/tags","count":1}')}}]);
