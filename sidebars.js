@@ -9,6 +9,10 @@ module.exports = {
       id: 'installation'
     },
     {
+      type: 'doc',
+      id: 'installation-v1-1-x'
+    },
+    {
       type: 'category',
       label: 'Image Tracking Quick Start',
       collapsed: true,

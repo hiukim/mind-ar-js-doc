@@ -16,10 +16,20 @@ This is sample application using three.js instead of AFRAME. The effect should b
 {`
 <html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-three.prod.js"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+	"three": "https://unpkg.com/three@0.147.0/build/three.module.js",
+	"three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+	"mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-face-three.prod.js"
+      }
+    }
+    </script>
     <script type="module">
-      const THREE = window.MINDAR.FACE.THREE;
-      const mindarThree = new window.MINDAR.FACE.MindARThree({
+      import * as THREE from 'three';
+      import { MindARThree } from 'mindar-face-three';
+      const mindarThree = new MindARThree({
 	container: document.querySelector("#container"),
       });
       const {renderer, scene, camera} = mindarThree;

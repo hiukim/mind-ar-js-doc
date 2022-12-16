@@ -99,6 +99,6 @@ module.exports = {
     'https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css'
   ],
   customFields: {
-    libVersion: "1.1.5"
+    libVersion: "1.2.0",
   }
 };
