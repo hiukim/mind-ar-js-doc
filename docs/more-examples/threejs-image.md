@@ -37,7 +37,7 @@ You can use the following target image for testing:
       import { MindARThree } from 'mindar-image-three';
       const mindarThree = new MindARThree({
 	container: document.querySelector("#container"),
-	imageTargetSrc: "https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind"
+	imageTargetSrc: "https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind"
       });
       const {renderer, scene, camera} = mindarThree;
       const anchor = mindarThree.addAnchor(0);
