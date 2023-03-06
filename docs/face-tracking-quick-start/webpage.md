@@ -76,4 +76,4 @@ MindAR engine uses the relative positions of two eyes to compute the face orient
 
 ### anchor points
 
-MindAR provides 486 anchor points on the face, and you can anchor object on any of them. Detailed positions can be found here: https://github.com/tensorflow/tfjs-models/blob/master/facemesh/mesh_map.jpg
+MindAR provides 486 anchor points on the face, and you can anchor object on any of them. Detailed positions can be found here: https://github.com/tensorflow/tfjs-models/blob/master/face-landmarks-detection/mesh_map.jpg

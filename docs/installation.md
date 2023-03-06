@@ -25,7 +25,7 @@ There are two generally two ways to install the library, either through `HTML sc
 #### Image Tracking
 
 <code>
-{`<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+{`<script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
 `}
 </code>
@@ -33,7 +33,7 @@ There are two generally two ways to install the library, either through `HTML sc
 #### Face Tracking
 
 <code>
-{`<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+{`<script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
 `}
 </code>
@@ -75,7 +75,7 @@ Since MindAR v1.2.0, ThreeJS becomes an external dependency, so you can choose y
   "imports": {
     "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
     "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
-    "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-three.prod.js"
+    "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-three.prod.js"
   }
 }
 </script>
@@ -101,7 +101,7 @@ and then in your application:
   "imports": {
     "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
     "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
-    "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-face-three.prod.js"
+    "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-three.prod.js"
   }
 }
 </script>
