@@ -14,7 +14,7 @@ If you turn your head a bit, you will probably notice a problem (the arm of the 
 
 <img src={demoImage1} width="300" />
 
-It's a common problem in augmented reality application. AR application does not alter the video. Instead it is jsut merely drawing another layer on top. Therefore, none of the video content can obscure our drawing layer (i.e. augmented realty objects). 
+It's a common problem in augmented reality application. AR application does not alter the video. Instead it is just merely drawing another layer on top. Therefore, none of the video content can obscure our drawing layer (i.e. augmented realty objects). 
 
 ## Occluder
 
