@@ -17,7 +17,7 @@ Let's start with a minimal example to understand how face tracking work in MindA
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
   </head>
 
@@ -42,9 +42,8 @@ Let's digest them:
 ### mind-ar-js and aframe library 
 
 <code>
-{`<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face.prod.js"></script>
-<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
+{`<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
 `}
 </code>
 

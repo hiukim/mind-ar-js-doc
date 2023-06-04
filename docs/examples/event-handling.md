@@ -22,12 +22,15 @@ We will go through the available events one by one in the following sub-sections
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
-	const arSystem = sceneEl.systems["mindar-image-system"];
+	let arSystem;
+	sceneEl.addEventListener('loaded', function () {
+	  arSystem = sceneEl.systems["mindar-image-system"];
+	});
 	const exampleTarget = document.querySelector('#example-target');
 	const examplePlane = document.querySelector('#example-plane');
 	const startButton = document.querySelector("#example-start-button");
@@ -43,10 +46,10 @@ We will go through the available events one by one in the following sub-sections
 	  arSystem.stop(); // stop AR 
 	});
 	pauseButton.addEventListener('click', () => {
-	  arSystem.pause(); // pause AR, keep video feed
+	  arSystem.pause(); // pause AR, pause video
 	});
 	pauseKeepVideoButton.addEventListener('click', () => {
-	  arSystem.pause(true); // pause AR and video
+	  arSystem.pause(true); // pause AR, keep video
 	});
 	unpauseButton.addEventListener('click', () => {
 	  arSystem.unpause(); // unpause AR and video
@@ -82,8 +85,8 @@ We will go through the available events one by one in the following sub-sections
       <button id="example-unpause-button">UnPause</button>
       <button id="example-stop-button">Stop</button>
     </div>
-    <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind; autoStart: false;" embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>\n
+    <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind; autoStart: false;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="near: 10; far: 10000; objects: .clickable"></a-camera>\n
       <a-entity id="example-target" mindar-image-target="targetIndex: 0">
 	<a-plane id="example-plane" class="clickable" color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
       </a-entity>

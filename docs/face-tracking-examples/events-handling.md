@@ -21,13 +21,15 @@ The full source code is attached first and we will go through them one by one.
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face.prod.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 	const sceneEl = document.querySelector('a-scene');
-	const arSystem = sceneEl.systems["mindar-face-system"];
+  let arSystem;
+  sceneEl.addEventListener('loaded', function () {
+	  arSystem = sceneEl.systems["mindar-face-system"];
+	});
 	const startButton = document.querySelector("#example-start-button");
 	const stopButton = document.querySelector("#example-stop-button");
 	const switchCameraButton = document.querySelector("#example-switch-camera-button");

@@ -18,15 +18,17 @@ FaceMesh effect
 {`
 <html>
   <head>
-    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://unpkg.com/es-module-shims@1.7.3/dist/es-module-shims.js"></script>
     <script type="importmap">
     {
       "imports": {
-	"three": "https://unpkg.com/three@0.147.0/build/three.module.js",
-	"three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
-	"mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-face-three.prod.js"
+	"three": "https://unpkg.com/three@0.153.0/build/three.module.js",
+	"three/addons/": "https://unpkg.com/three@0.153.0/examples/jsm/",
+	"mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-three.prod.js"
       }
     }
+    </script>
     <script type="module">
       import * as THREE from 'three';
       import { MindARThree } from 'mindar-face-three';
@@ -37,7 +39,7 @@ FaceMesh effect
       const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1 );
       scene.add(light);
       const faceMesh = mindarThree.addFaceMesh();
-      const texture = new THREE.TextureLoader().load('./assets/canonical_face_model_uv_visualization.png');
+      const texture = new THREE.TextureLoader().load('https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/face-tracking/assets/canonical_face_model_uv_visualization.png');
       faceMesh.material.map = texture;
       faceMesh.material.transparent = true;
       faceMesh.material.needsUpdate = true;

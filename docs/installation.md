@@ -25,7 +25,7 @@ There are two generally two ways to install the library, either through `HTML sc
 #### Image Tracking
 
 <code>
-{`<script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+{`<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
 `}
 </code>
@@ -33,7 +33,7 @@ There are two generally two ways to install the library, either through `HTML sc
 #### Face Tracking
 
 <code>
-{`<script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+{`<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
 `}
 </code>
@@ -69,7 +69,7 @@ Since MindAR v1.2.0, ThreeJS becomes an external dependency, so you can choose y
 #### Image Tracking
 
 <code>
-{`<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+{`<script async src="https://unpkg.com/es-module-shims@1.7.3/dist/es-module-shims.js"></script>
 <script type="importmap">
 {
   "imports": {

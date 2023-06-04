@@ -22,13 +22,13 @@ You can use the following target image for testing:
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.7.3/dist/es-module-shims.js"></script>
     <script type="importmap">
     {
       "imports": {
-	"three": "https://unpkg.com/three@0.147.0/build/three.module.js",
-	"three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
-	"mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-three.prod.js"
+	"three": "https://unpkg.com/three@0.153.0/build/three.module.js",
+	"three/addons/": "https://unpkg.com/three@0.153.0/examples/jsm/",
+	"mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-three.prod.js"
       }
     }
     </script>
@@ -37,7 +37,7 @@ You can use the following target image for testing:
       import { MindARThree } from 'mindar-image-three';
       const mindarThree = new MindARThree({
 	container: document.querySelector("#container"),
-	imageTargetSrc: "https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind"
+	imageTargetSrc: "https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@${customFields.libVersion}/examples/image-tracking/assets/card-example/card.mind"
       });
       const {renderer, scene, camera} = mindarThree;
       const anchor = mindarThree.addAnchor(0);
