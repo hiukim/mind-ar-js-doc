@@ -74,6 +74,7 @@ module.exports = {
 	'more-examples/threejs-image',
 	'more-examples/threejs-face',
 	'more-examples/threejs-face-facemesh',
+	'more-examples/threejs-face-blendshapes',
       ]
     },
     /*

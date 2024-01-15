@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="importmap">
+    {
+      "imports": {
+				"three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+				"three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+				"mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.4/dist/mindar-face-three.prod.js"
+      }
+    }
+    </script>
+    <script type="module">
+      import * as THREE from 'three';
+      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+      import { MindARThree } from 'mindar-face-three';
+
+      class Avatar {
+        constructor() {
+          this.gltf = null;
+          this.morphTargetMeshes = [];
+        }
+        async init() {
+          const url = "https://assets.codepen.io/9177687/raccoon_head.glb";
+          const gltf = await new Promise((resolve) => {
+            const loader = new GLTFLoader();
+            loader.load(url, (gltf) => {
+              resolve(gltf);
+            });
+          });
+
+          gltf.scene.traverse((object) => {
+            if ((object).isBone && !this.root) {
+              this.root = object; // as THREE.Bone;
+            }
+            if (!(object).isMesh) return
+            const mesh = object;
+            if (!mesh.morphTargetDictionary || !mesh.morphTargetInfluences) return
+            this.morphTargetMeshes.push(mesh);
+          });
+          this.gltf = gltf;
+        }
+
+        updateBlendshapes(blendshapes) {
+          const categories = blendshapes.categories;
+          let coefsMap = new Map();
+          for (let i = 0; i < categories.length; ++i) {
+            coefsMap.set(categories[i].categoryName, categories[i].score);
+          }
+
+          for (const mesh of this.morphTargetMeshes) {
+            if (!mesh.morphTargetDictionary || !mesh.morphTargetInfluences) {
+              continue;
+            }
+            for (const [name, value] of coefsMap) {
+              if (!Object.keys(mesh.morphTargetDictionary).includes(name)) {
+                continue;
+              }
+              const idx = mesh.morphTargetDictionary[name];
+              mesh.morphTargetInfluences[idx] = value;
+            }
+          }
+        }
+      }
+
+      let mindarThree = null;
+      let avatar = null;
+
+      const setup = async () => {
+        mindarThree = new MindARThree({
+          container: document.querySelector("#container"),
+        });
+
+        const { renderer, scene, camera } = mindarThree;
+
+        const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+        scene.add(light);
+
+        const anchor = mindarThree.addAnchor(1);
+
+        avatar = new Avatar();
+        await avatar.init();
+        avatar.gltf.scene.scale.set(2, 2, 2);
+        anchor.group.add(avatar.gltf.scene);
+      }
+
+      const start = async () => {
+        if (!mindarThree) {
+          await setup();
+        }
+
+        await mindarThree.start();
+        const { renderer, scene, camera } = mindarThree;
+
+        const feedVideo = document.querySelector("#video-feed");
+        feedVideo.srcObject = mindarThree.video.srcObject.clone();
+        feedVideo.play();
+
+        renderer.setAnimationLoop(() => {
+          const estimate = mindarThree.getLatestEstimate();
+          if (estimate && estimate.blendshapes) {
+            avatar.updateBlendshapes(estimate.blendshapes);
+          }
+          renderer.render(scene, camera);
+        });
+      }
+      start();
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+      #video-feed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 50vw;
+        z-index: 9999999;
+        transform: scaleX(-1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+    </div>
+    <video id="video-feed">
+    </video>
+  </body>
+</html>
+
