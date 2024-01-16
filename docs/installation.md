@@ -25,7 +25,7 @@ There are two generally two ways to install the library, either through `HTML sc
 #### Image Tracking
 
 <code>
-{`<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+{`<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-aframe.prod.js"></script>
 `}
 </code>
@@ -33,7 +33,7 @@ There are two generally two ways to install the library, either through `HTML sc
 #### Face Tracking
 
 <code>
-{`<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+{`<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-aframe.prod.js"></script>
 `}
 </code>
@@ -69,12 +69,11 @@ Since MindAR v1.2.0, ThreeJS becomes an external dependency, so you can choose y
 #### Image Tracking
 
 <code>
-{`<script async src="https://unpkg.com/es-module-shims@1.7.3/dist/es-module-shims.js"></script>
-<script type="importmap">
+{`<script type="importmap">
 {
   "imports": {
-    "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
     "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-image-three.prod.js"
   }
 }
@@ -95,12 +94,11 @@ and then in your application:
 #### Face Tracking
 
 <code>
-{`<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-<script type="importmap">
+{`<script type="importmap">
 {
   "imports": {
-    "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
     "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-three.prod.js"
   }
 }

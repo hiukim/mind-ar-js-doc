@@ -26,7 +26,7 @@ Credit: the racoon avatar 3D model used in this example comes from <a href="http
       "imports": {
         "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
         "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
-        "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.4/dist/mindar-face-three.prod.js"
+        "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@${customFields.libVersion}/dist/mindar-face-three.prod.js"
       }
     }
     </script>
